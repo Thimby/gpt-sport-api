@@ -22,7 +22,7 @@ Here is the child's profile:
 Use this profile to suggest 3 beginner-friendly sports that are a good match.
 
 Each suggestion must include:
-- <strong>Sport name</strong>: A brief reason why it suits the child
+- A bold sport name using <strong> tags (e.g. <strong>Archery</strong>)
 - A link: https://growletics.com/sports/{sport-name}
 
 Respond only in HTML using <ul> and <li>. Keep it short, friendly, and under 100 words total.
