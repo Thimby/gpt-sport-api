@@ -36,16 +36,17 @@ Avoid repeating the same sports unless they are truly the best match.
 `;
 
   const gptRes = await fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      model: 'gpt-4-turbo',
-      messages: [{ role: 'system', content: prompt }]
-    })
-  });
+  method: 'POST',
+  headers: {
+    Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    model: 'gpt-4-turbo',
+    temperature: 1.2,
+    messages: [{ role: 'system', content: prompt }]
+  })
+});
 
   const data = await gptRes.json();
   const html = data.choices?.[0]?.message?.content || 'No response.';
