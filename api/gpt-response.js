@@ -14,27 +14,23 @@ export default async function handler(req, res) {
   const { age, activity, personality, preference } = req.body;
 
   const prompt = `
-Respond in pure HTML using <p>, <ul>, <li>, and <strong> tags. Avoid line breaks.
-Keep the total response under 100 words.
+You are a friendly assistant that helps parents choose beginner sports for their kids.
 
-You are a friendly assistant that helps parents find beginner sports for their kids.
-    
-    The parent has provided the following:
-    - Child's age
-    - Activity level
-    - Personality or social traits
-    - Preferred types of activities
-    - A sense of what the child seems naturally good at
-    - Any physical limitations
+Use the information below to suggest 3 beginner-friendly sports. Each suggestion must:
+- Be 1 sentence on why it’s a fit
+- Include a tip to get started
+- Include a link: https://growletics.com/sports/{sport-name}
 
-    Use these to suggest 3 beginner-friendly sports that match their overall profile.
+Respond in clean HTML using <ul>, <li>, <strong>, <p>. NO line breaks or newlines.
+Total response must be under 100 words. Keep it very concise.
 
-    Each suggestion should include:
-    - A short explanation of why it’s a good fit (use strengths/interests where relevant)
-    - A helpful tip to get started
-    - A link in this format: https://growletics.com/sports/{sport-name}
-
-    Keep it friendly, clear, and brief.
+The parent's input includes:
+- Age
+- Activity level
+- Personality
+- Preferences
+- Skills
+- Limitations
 `;
 
   const gptRes = await fetch('https://api.openai.com/v1/chat/completions', {
