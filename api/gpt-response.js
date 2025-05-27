@@ -14,7 +14,6 @@ export default async function handler(req, res) {
   const { age, activity, personality, preference } = req.body;
 
   const prompt = `
-const prompt = `
 You are a friendly assistant helping parents discover beginner sports for their child.
 
 Here is the child's profile:
