@@ -15,8 +15,10 @@ export default async function handler(req, res) {
 
   const prompt = `
 Respond in pure HTML using <p>, <ul>, <li>, and <strong> tags. Avoid line breaks.
+Keep the total response under 100 words.
+
 You are a friendly assistant that helps parents find beginner sports for their kids. Based on age: ${age}, activity: ${activity}, personality: ${personality}, and preference: ${preference}, suggest 3 suitable sports. Include a tip and a link like https://growletics.com/sports/{sport-name}.
-  `;
+`;
 
   const gptRes = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
