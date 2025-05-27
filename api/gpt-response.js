@@ -16,9 +16,7 @@ export default async function handler(req, res) {
   const prompt = `
 You are a friendly assistant that helps parents choose beginner sports for their kids.
 
-Use the information below to suggest 3 beginner-friendly sports. Each suggestion must:
-- Be 1 sentence on why it’s a fit
-- Include a link: https://growletics.com/sports/{sport-name}
+Use the information below to suggest 3 beginner-friendly sports. Each suggestion must be 1 sentence on why it’s a fit and include a link: https://growletics.com/sports/{sport-name}
 
 Respond in clean HTML using <ul>, <li>, <strong>, <p>. NO line breaks or newlines.
 Total response must be under 100 words. Keep it very concise.
